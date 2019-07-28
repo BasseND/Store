@@ -6,10 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Store</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 
 <body>
-    My Store
+    <div class="container">
+        <h2 class="display-5 text-center mt-4 mb-4">Ajouter un article</h2>
+        <div class="form-container">
+            <form id="article_form" action="">
+                <div class="form-group">
+                    <label class="col-form-label" for="art_title">Titre de l'article</label>
+                    <input type="text" class="form-control" placeholder="Titre de l'article" id="art_title">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="art_price">Prix</label>
+                    <input type="number" class="form-control" placeholder="Prix" id="art_price">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Catégories</label>
+                    <select class="custom-select" id="art_categorie" placeholder="Selectionez">
+                        <!-- <option selected="">Open</option> -->
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Ajouter</button>
+                <!-- <div class="form-group">
+                            <label class="col-form-label" for="art_price">Image</label>
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile02">
+                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="">Upload</span>
+                                </div>
+                            </div>
+                        </div> -->
+
+            </form>
+        </div>
+        <div id="articles-list">
+
+        </div>
+    </div>
+
+
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
