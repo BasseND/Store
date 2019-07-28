@@ -1,0 +1,168 @@
+body {
+    font-family: $mainFont;
+    font-weight: 400;
+    line-height: 32px;
+    font-size: 14px;
+    color: $textcolor;
+    background-color: $colorWhite;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $secondFont;
+    font-weight: normal;
+    color: $textcolor;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit;
+}
+
+a,
+button {
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    cursor: pointer;
+    outline: medium none;
+    color: $mainColor;
+}
+
+a:hover,
+button:hover {
+    text-decoration: none;
+    color: $mainColor;
+}
+
+button.btn.btn-link {
+    text-decoration: none;
+}
+
+a:focus,
+button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+button.btn {
+    background-color: $mainColor;
+    color: $colorWhite !important;
+    padding: 10px 20px;
+    border: none;
+}
+
+button.btn:hover {
+    background-color: $thirdColor;
+    color: $colorWhite !important;
+}
+
+button.btn-revert {
+    background-color: $colorWhite;
+    color: $mainColor !important;
+    padding: 10px 20px;
+}
+
+button.btn-revert:hover {
+    background-color: $fourColor;
+    color: $colorWhite !important;
+}
+
+button:focus,
+input:focus,
+input:focus,
+textarea,
+textarea:focus {
+    outline: 0;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+textarea {
+    border-radius: 0;
+    border-color: $bgcolor3;
+    color: $textcolor;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    font-weight: normal;
+    color: $textcolor;
+    margin-bottom: 15px;
+    font-family: $secondFont;
+}
+
+hr {
+    border-bottom: 1px solid $bgcolor1;
+    border-top: 0 none;
+    margin: 30px 0;
+    padding: 0;
+}
+
+label {
+    color: $textcolor;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}

@@ -1,3 +1,30 @@
+/*-----------------------------------------------------------------
+[Main Stylesheet]
+
+-------------------------------------------------------------------
+01. Import
+-------------------------------------------------------------------*/
+/*------- google fonts -------*/
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Montserrat:300,400,500,600,700,800,900&display=swap");
+@import "_variables";
+@import "_mixin";
+@import "_preset";
+@import "_header";
+@import "_tabs";
+@import "_modal";
+
+/*-------------------------------------------------------------------
+02. General
+-------------------------------------------------------------------*/
+
+body {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    color: #606060;
+    line-height: 24px;
+}
+
 #articles-list {
     margin: 30px 0;
     display: grid;

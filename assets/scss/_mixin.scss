@@ -1,0 +1,36 @@
+@mixin box-shadow-radius ($shadow-color, $radius) {
+    box-shadow: 0 4px 22px 0 $shadow-color;
+    border-radius: $radius;
+}
+
+// media query mixin
+@mixin mq($minWhidthSize, $maxWhidthSize) {
+
+    // Mobile Screen small: @media (min-width: 0px) and (max-width: 320px)
+    // Mobile Screen : @media (min-width: 0px) and (max-width: 767px)
+    // Tablet Screen : @media (min-width: 768px) and (max-width: 1023px)
+    // Desktop Screen : @media (min-width: 1024px) and (max-width: 1200px)
+    @media (min-width: $minWhidthSize) and (max-width: $maxWhidthSize) {
+        @content;
+    }
+}
+
+// media query Max Width mixin
+@mixin mq-max($maxWhidthSize) {
+    @media (max-width: $maxWhidthSize) {
+        @content;
+    }
+}
+
+// media query Min Width mixin
+@mixin mq-min($minWhidthSize) {
+    @media (min-width: $minWhidthSize) {
+        @content;
+    }
+}
+
+// Usage 
+// Tablet mode
+// @include mq(768px, 1540px) {
+//     display: none;
+// }
