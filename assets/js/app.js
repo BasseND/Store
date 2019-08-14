@@ -35,21 +35,23 @@ class UI {
 
     // ];
     const articles = storedArticles;
-
-    articles.forEach((article) => UI.addArticleToList(article));
+    var articleSorted = articles.reverse();
+    articleSorted.forEach((article) => UI.addArticleToList(article));
   }
 
   static addArticleToList(article) {
     const articleList = document.querySelector('#articles-list');
     const articleItem = document.createElement('div');
-    articleItem.classList = 'article-item';
+    articleItem.classList = 'grid-item';
     articleItem.innerHTML = `
-     
-          <img src="assets/img/product.png" alt="">
-          <div class="article-content">
-            <h4 class="display-5">${article.title}</h4>
-            <p> <span class="price">${article.price}</span> <span>$</span></p>
-            <p class="categorie">${article.categorie}</p>
+         <div class="article-item">
+            <img src="assets/img/product.png" alt="">
+            <div class="article-content">
+              <h4 class="display-5">${article.title}</h4>
+              <p> <span class="price">${article.price}</span> <span>$</span></p>
+              <p class="categorie">${article.categorie}</p>
+              <button type="button" data-ref="${article.ref}" class="btn btn-outline-success">Ajouter</button>
+            </div>
           </div>
     `;
 
@@ -72,8 +74,6 @@ class UI {
     document.querySelector('#art_price').value = '';
     document.querySelector("#art_categorie").value = '';
   }
-
-
 }
 
 // Store Class (LocalStorage)
@@ -114,41 +114,42 @@ const articleForm = document.querySelector('#article_form');
 document.addEventListener('DOMContentLoaded', UI.displayArticles);
 
 // Event to Add Article
-
-articleForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  console.log('clicked');
-  // Get form values
-  const articleRef = document.querySelector('#art_ref').value;
-  const articleTitle = document.querySelector('#art_title').value;
-  const articlePrice = document.querySelector('#art_price').value;
-  const catSelected = document.querySelector("#art_categorie");
-  const articleCategorie = catSelected.options[catSelected.selectedIndex].text;
-
-
-  // Validate form
-  if (articleTitle === '' || articlePrice === '' || articleCategorie === '') {
-    UI.showMessage('Veuillez remplir le formulaire', 'info');
-  } else {
-    // Instatiate Article
-    const article = new Article(articleRef, articleTitle, articlePrice, articleCategorie)
-    console.log(article);
-
-    // Add Article to UI
-    UI.addArticleToList(article);
-
-    // Add Article to Store
-    Store.addArticle(article);
-
-    // Show success message
-    UI.showMessage('Article ajouté avec succes', 'success');
-
-    // Clear Fields
-    UI.clearFields();
-
-  }
+if (articleForm) {
+  articleForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('clicked');
+    // Get form values
+    const articleRef = document.querySelector('#art_ref').value;
+    const articleTitle = document.querySelector('#art_title').value;
+    const articlePrice = document.querySelector('#art_price').value;
+    const catSelected = document.querySelector("#art_categorie");
+    const articleCategorie = catSelected.options[catSelected.selectedIndex].text;
 
 
-})
+    // Validate form
+    if (articleTitle === '' || articlePrice === '' || articleCategorie === '') {
+      UI.showMessage('Veuillez remplir le formulaire', 'info');
+    } else {
+      // Instatiate Article
+      const article = new Article(articleRef, articleTitle, articlePrice, articleCategorie)
+      console.log(article);
+
+      // Add Article to UI
+      UI.addArticleToList(article);
+
+      // Add Article to Store
+      Store.addArticle(article);
+
+      // Show success message
+      UI.showMessage('Article ajouté avec succes', 'success');
+
+      // Clear Fields
+      UI.clearFields();
+
+    }
+
+
+  })
+}
 
 // Event to Remove Article

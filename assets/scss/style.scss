@@ -10,8 +10,8 @@
 @import "_mixin";
 @import "_preset";
 @import "_header";
-@import "_tabs";
-@import "_modal";
+
+
 
 /*-------------------------------------------------------------------
 02. General
@@ -42,6 +42,7 @@ body {
     img {
         background-color: beige;
         height: 210px;
+        width: 100%;
         border-radius: 5px 5px 0 0;
     }
 
